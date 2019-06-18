@@ -1,0 +1,47 @@
+
+#addDialogContainer {
+  background: rgba(0, 0, 0, 0.57);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+  width: 100%;
+  will-change: opacity;
+  z-index: 2000;
+}
+
+#addDialogContainer.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.container .fab {
+  background-color: #88e3f7;
+  border-radius: 50%;
+  border: none;
+  bottom: 1rem;
+  height: 56px;
+  padding: 12px;
+  position: fixed;
+  right: 1rem;
+  width: 56px;
+  z-index: 1000;
+}
+
+.container .fab .icon {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon.add {
+  background-image: url("/images/add.svg");
+}

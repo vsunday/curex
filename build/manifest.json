@@ -1,0 +1,16 @@
+{
+    "name": "Curex",
+    "short_name": "Curex",
+    "description": "Progressive Web App that lists currency exchange rates",
+    "icons": [
+        {
+            "src": "images/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "theme_color": "#E3F2FD",
+    "background_color": "#E3F2FD"
+}

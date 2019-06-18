@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/bootstrap.min.css">
+  <link rel="stylesheet" href="/my-css.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curex - PWA test</title>
+</head>
+
+<body>
+  <div class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <strong>Curex</strong>
+    <button id="install-btn" class="btn btn-light btn-sm">+</button>
+  </div>
+  <div class="container" id="container">
+    <button id="open" class="fab">
+      <span class="icon add"></span>
+    </button>
+    <div class="card m-3" id="template" hidden>
+      <div class="row no-gutters">
+        <div class="col-sm-3 bg-light">
+          <div class="card-body">
+            <div class="card-text" id="fromValue">1 USD =</div>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div class="card-body">
+            <div class="card-text" id="toValue">108 JPY</div>
+            <div class="card-text"><small class="text-muted" id='reftime'>6/11 12:00</small></div>
+          </div>
+        </div>
+        <div class="col-sm-1 ml-auto">
+          <button class="btn p-2" id="remove">&times;</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="addDialogContainer">
+      <div class="dialog mb-3">
+        <div class="dialog-title">Add Rate</div>
+        <label for="fromList" style="color: white;">From</label>
+        <select id="fromList" class="custom-select">
+          <option value="USD">USD</option>
+          <option value="JPY">JPY</option>
+          <option value="EUR">EUR</option>
+          <option value="BTC">BTC</option>
+          <option value="ETH">ETH</option>
+        </select>
+        <label for="toList" style="color: white;">to</label>
+        <select id="toList" class="custom-select">
+          <option value="USD">USD</option>
+          <option value="JPY">JPY</option>
+          <option value="EUR">EUR</option>
+          <option value="BTC">BTC</option>
+          <option value="ETH">ETH</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="add" class="btn btn-primary">Add</button>
+        <button id="cancel" class="btn btn-light">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+  <script src="/install.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log(`Service Worker registered scope: ${registration.scope}`);
+          })
+          .catch(err => {
+            console.error(`Service Worker registration failed: ${err}`);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "curex",
+  "version": "0.1.0",
+  "description": "currency exchange display, PWA test",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run build && node -r dotenv/config server.js",
+    "copy": "copyfiles -u 1 src/**/**/* src/**/* src/* build",
+    "build": "npm run copy && workbox injectManifest workbox-config.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "currency",
+    "exchange",
+    "pwa"
+  ],
+  "author": "vljlv",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.0",
+    "dotenv": "^8.0.0",
+    "nodemon": "^1.19.1",
+    "workbox-cli": "^4.3.1"
+  }
+}
