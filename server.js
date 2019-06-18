@@ -1,6 +1,4 @@
 const express = require('express');
-const https = require('https');
-const fs = require('fs');
 const fetch = require('node-fetch');
 
 const PORT = process.env.PORT || '8081';
@@ -28,12 +26,5 @@ function getExchangeRate(req, resp) {
 
 app.get('/rate', getExchangeRate);
 app.use(express.static('build'));
-
-// https.createServer({
-//   key: fs.readFileSync('./key.pem'),
-//   cert: fs.readFileSync('./cert.pem'),
-//   passphrase: process.env.PASSPHRASE
-// }, app).listen(PORT);
-// console.log(`Server listening at ${PORT}`);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
