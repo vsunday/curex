@@ -3,7 +3,7 @@ const https = require('https');
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-const PORT = '8081';
+const PORT = process.env.PORT || '8081';
 const app = express();
 
 function getExchangeRate(req, resp) {
